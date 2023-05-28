@@ -10,29 +10,37 @@
 </head>
 
 <body>
+    <input type="text" id="input">
+    <label for="input">Nhập kí tự</label> <br> <br>
+    <button type="button" id="button" onclick="butTon()">check</button>
     <script>
-        function isPalindrome(s) {
-            let check = true;
-            let firt = 0;
-            let last = s.length - 1;
-            while (firt<=last) {
-                if (s[firt] !== s[last]) {
-                    check = false
-                    break
-                }
+        function butTon() {
+            function isPalindrome(s) {
+                let check = true;
+                let firt = 0;
+                let last = s.length - 1;
+                while (firt <= last) {
+                    if (s[firt] !== s[last]) {
+                        check = false
+                        break
+                    }
                     firt++;
-                    last--          
-            }
-            if (check == true) {
-                console.log(`${s} la ham doi xung`)
-            }
-            else{
-                console.log(`${s} la ham ko doi xung`)
+                    last--
+                }
+                if (check == true) {
+                   let s1 = s.join("")
+                    alert(`${s1} là từ đối xứng`)
+                }
+                else {
+                    let s1 = s.join("")
+                    alert(`${s1} không là từ đối xứng`)
 
+                }
             }
+            let str = document.getElementById("input").value;
+            let str1 = str.split("");
+            isPalindrome(str1)
         }
-        let arr = ["a", "bd", "c", "c", "b", "a"]
-      isPalindrome(arr)
 
     </script>
 
